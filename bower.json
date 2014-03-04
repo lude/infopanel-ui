@@ -1,0 +1,37 @@
+{
+  "name": "brunch-with-bootstrap-jade-marionette",
+  "version": "0.0.0",
+  "authors": [
+    "David Olsen <david.olsen@isprime.com>"
+  ],
+  "description": "brunch skeleton with bs3, backbone.marionette, jade, and sass",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "bootstrap": "~3.1.1",
+    "marionette": "~1.6.2",
+    "momentjs": "~2.5.1",
+    "json3": "~3.3.0"
+  },
+  "overrides": {
+    "backbone": {
+      "main": "backbone.js"
+    },
+    "backbone.babysitter": {
+      "main": "lib/backbone.babysitter.js"
+    },
+    "backbone.wreqr": {
+      "main": "lib/backbone.wreqr.js"
+    },
+    "underscore": {
+      "main": "underscore.js"
+    }
+  }
+}

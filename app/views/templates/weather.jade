@@ -1,0 +1,13 @@
+.panel.panel-default
+  .panel-heading
+     b Weather from forecast.io
+  table.table
+    tr
+      td
+        h1 Now
+        span.weather-icon(style="float:right; font-size:60px").setting(data-icon="#{currently.icon}")
+        br
+        span(style="font-weight:normal") #{currently.summary}
+          br
+          #{currently.temperature}°
+        span(style="float:right;font-weight:normal") H: #{currently.humidity}%

@@ -1,0 +1,12 @@
+.panel.panel-default
+  .panel-heading
+    b Path Trains
+  table.table
+    tbody
+      if times
+        for time in times
+          tr
+            td= time
+      tr
+        td
+          | #{alerts}
