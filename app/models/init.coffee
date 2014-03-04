@@ -26,7 +26,7 @@ app.interval.twitter_refresh = setInterval =>
   app.collections.twitter_feed.changes()
 , 600000
 
-app.models.weather.fetch
+app.models.weather.fetch()
 app.interval.weather_refresh = setInterval =>
   app.models.weather.fetch()
   app.views.weather.render()
