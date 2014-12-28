@@ -1,4 +1,4 @@
-class MainLayout extends Marionette.Layout
+class MainLayout extends Marionette.LayoutView
   template: require './templates/main'
 
   regions:

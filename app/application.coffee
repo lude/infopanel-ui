@@ -51,7 +51,4 @@ class Application extends Backbone.Marionette.Application
 
       Backbone.history.start()
 
-    @start
-      domain: window.location.hostname
-
 module.exports = new Application()

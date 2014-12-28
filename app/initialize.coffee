@@ -1,4 +1,5 @@
 window.app = require 'application'
 
 $ ->
-  window.app.initialize()
+  window.app.start
+    domain: window.location.hostname
