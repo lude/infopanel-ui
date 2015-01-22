@@ -18,6 +18,7 @@
     "bootstrap": "~3.3.1",
     "marionette": "~2.3.0",
     "momentjs": "~2.8.4",
+    "stativus": "~0.10.0",
     "json3": "~3.3.0"
   },
   "overrides": {

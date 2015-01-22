@@ -23,6 +23,11 @@ class Application extends Backbone.Marionette.Application
       require 'models/init'
       require 'views/init'
 
+    @addInitializer (options) =>
+      #initialize state chart
+      @stateChart = Stativus.createStatechart()
+      require 'states/init'
+
     @startModule = (moduleName) =>
 
       currentApp = @module(moduleName)
@@ -38,8 +43,13 @@ class Application extends Backbone.Marionette.Application
 
     @on 'start', (options) =>
 
+      #track app launch time
       @startedAt = new Date().getTime()
-
+      #fire initial state
+      @stateChart.initStates 'Top'
+      #start tracking history
+      Backbone.history.start()
+      
       @mainLayout = require 'layouts/main'
       $("body").html(@mainLayout.render().$el)
 
