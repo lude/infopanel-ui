@@ -15,6 +15,28 @@
     tr
       td
         h4 
+          span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{minutely.icon}")
           b Next Hour 
-          span(style="font-weight:normal") - #{minutely.summary}
-          span.weather-icon(style="float:right; font-size:60px").setting(data-icon="#{minutely.icon}")
+          small - #{minutely.summary}
+    tr
+      td
+        h4 
+          span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{hourly.icon}")
+          b Next 24 Hours
+          small - #{hourly.summary}
+    tr
+      td
+        h4 
+          span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{daily.icon}")
+          b Next 5 Days
+          small - #{daily.summary}
+    each day in weekly
+      tr
+        td
+          h4
+            span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{day.icon}")
+            b(style="font-size:120%") #{day.day} - #{day.high}°
+            | /#{day.low}° - #{day.winddir} #{day.windspeed} mi/h
+          h4
+            small #{day.summary}
+
