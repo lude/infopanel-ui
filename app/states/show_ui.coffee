@@ -6,8 +6,7 @@ app.stateChart.addState 'Show UI',
     app.layouts.main = require 'layouts/main'
     $("body").html app.layouts.main.render().$el
 
-    {NavbarView} = require 'views/navbar'
-    app.views.navbar = new NavbarView
-    app.views.navbar.render ->
-      app.layouts.main.navbarRegion.show app.views.navbar
+    {NavbarLayout} = require 'layouts/navbar'
+    app.layouts.navbar = new NavbarLayout
+    app.layouts.main.navbarRegion.show app.layouts.navbar
     
