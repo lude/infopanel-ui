@@ -11,9 +11,9 @@ class exports.NewsItemView extends Backbone.Marionette.ItemView
     # custom plugin cleanup here
 
 
-class exports.NewsView extends Backbone.Marionette.CompositeView
-  itemView: exports.NewsItemView
-  itemViewContainer: 'tbody'
+class exports.NewsListView extends Backbone.Marionette.CompositeView
+  childView: exports.NewsItemView
+  childViewContainer: 'tbody'
   template: require './templates/news/list'
   onRender: ->
     # initialize pagination plugin

@@ -1,6 +1,28 @@
+@font-face
+  font-family: 'Raleway'
+  font-style: normal
+  font-weight: 400
+  src: url(/fonts/Raleway.ttf)
+
+@font-face
+  font-family: 'MeteoconsRegular'
+  src: url(/fonts/meteocons.ttf)
+
 body
-  font-family: 'Lato', sans-serif
+  font-family: 'Raleway', sans-serif
   padding-top: 60px
 
 pull-left
   padding-right: 5px
+
+.weather-icon:before
+  font-family: 'MeteoconsRegular'
+  content: attr(data-icon)
+
+h2, h3, h4, h5, h6
+  margin-top: 5px
+  margin-bottom: 5px
+
+.col-lg-4
+  overflow: hidden
+

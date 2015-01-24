@@ -12,8 +12,8 @@ class exports.TwitterItemView extends Backbone.Marionette.ItemView
 
 
 class exports.TwitterView extends Backbone.Marionette.CompositeView
-  itemView: exports.TwitterItemView
-  itemViewContainer: 'tbody'
+  childView: exports.TwitterItemView
+  childViewContainer: 'tbody'
   template: require './templates/twitter/list'
   onRender: ->
     # initialize pagination plugin

@@ -16,7 +16,7 @@
   "dependencies": {
     "backbone": "~1.1.2",
     "bootstrap": "~3.3.1",
-    "marionette": "~2.3.0",
+    "marionette": "~2.3.1",
     "momentjs": "~2.8.4",
     "stativus": "~0.10.0",
     "json3": "~3.3.0"
@@ -33,6 +33,9 @@
     },
     "underscore": {
       "main": "underscore.js"
+    },
+    "stativus": {
+      "main": "stativus.js"
     }
   }
 }

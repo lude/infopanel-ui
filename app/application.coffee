@@ -2,7 +2,7 @@ class Application extends Backbone.Marionette.Application
 
  initialize: ->
 
-    apiPrefix = 'http://localhost:6543/'
+    apiPrefix = '/'
 
     # enable to view verbose console output
     window.DEBUG_MODE = yes
@@ -15,13 +15,13 @@ class Application extends Backbone.Marionette.Application
       @views = {}
       @models = {}
       @collections = {}
+      @layouts = {}
 
       @intervals = @interval = {}
 
     @addInitializer (options) =>
 
       require 'models/init'
-      require 'views/init'
 
     @addInitializer (options) =>
       #initialize state chart
@@ -50,15 +50,4 @@ class Application extends Backbone.Marionette.Application
       #start tracking history
       Backbone.history.start()
       
-      @mainLayout = require 'layouts/main'
-      $("body").html(@mainLayout.render().$el)
-
-      @mainLayout.navbarRegion.show(@views.navbar)
-      @mainLayout.leftRegion.show(@views.weather)
-      @mainLayout.middleRegion.show(@views.news)
-      @mainLayout.rightTopRegion.show(@views.path)
-      @mainLayout.rightBottomRegion.show(@views.twitter)
-
-      Backbone.history.start()
-
 module.exports = new Application()
