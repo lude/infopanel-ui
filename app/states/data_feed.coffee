@@ -15,9 +15,10 @@ app.stateChart.addState 'Data Feed',
 
     # setup periodic collection update
     _updateWeather = ->
-      app.intervals.weather_refresh = setTimeout =>
-        app.models.weather.once 'change', ->
-          _updateWeather()
+      app.intervals.weather_refresh = setInterval =>
+        app.models.weather.on 'change', ->
+          app.views.weather.render()
+        console.log 'fetched weather'
         app.models.weather.fetch()
       , 600000
 
@@ -30,10 +31,9 @@ app.stateChart.addState 'Data Feed',
       app.collections.news.fetch()
 
     _updateNews = ->
-      app.intervals.news_refresh = setTimeout =>
-        app.collections.news_feed.once 'sync', ->
+      app.intervals.news_refresh = setInterval =>
+        app.collections.news_feed.on 'sync', ->
           app.views.news.render()
-          _updateNews()
         app.collections.news_feed.changes()
       , 600000
 
@@ -46,10 +46,9 @@ app.stateChart.addState 'Data Feed',
       app.collections.twitter.fetch()
 
     _updateTwitter = ->
-      app.intervals.twitter_refresh = setTimeout =>
-        app.collections.twitter_feed.once 'sync', ->
+      app.intervals.twitter_refresh = setInterval =>
+        app.collections.twitter_feed.on 'sync', ->
           app.views.twitter.render()
-          _updateTwitter()
         app.collections.twitter_feed.changes()
       , 600000
 
