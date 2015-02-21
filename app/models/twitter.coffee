@@ -10,31 +10,22 @@ class exports.Twitter extends Backbone.Model
   initialize: ->
     #convert from twitter time to momentjs
     @parseCreatedAt()
-#    @parseURLS()
-
-    @on 'change:score', @parseScore
-    @parseScore
+    @parseURLS()
 
   parseCreatedAt: ->
     if @get('created_at')
       @set 'created_ago', moment(@get 'created_at', "ddd MMM DD HH:mm:ss Z YYYY").fromNow()
 
-#  urlify: (text) ->
-#    urlRegex = /(https?:\/\/[^\s]+)/g
-#    text.replace urlRegex, (url) ->
-#      "<a href=\"" + url + "\">" + url + "</a>"
+  urlify: (text) ->
+    urlRegex = /(https?:\/\/[^\s]+)/g
+    text.replace urlRegex, (url) ->
+      "<a href=\"" + url + "\">" + url + "</a>"
 
-#  parseURLS: ->
-#    if @get('text')
-#      @set 'text', @urlify(@get('text'))
-
-  parseScore: ->
-    # just a filler, maybe we want to convert scores to HR?
-    if @get('score')
-      scoreObj = 'filler'
+  parseURLS: ->
+    if @get('text')
+      @set 'text', @urlify(@get('text'))
 
   parse: (response) ->
-
     model = response
     {TwitterCollection} = require 'models/twitter'
     collection = new TwitterCollection

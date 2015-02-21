@@ -64,7 +64,7 @@ app.stateChart.addState 'Data Feed',
     {NewsListView} = require 'views/news'
     app.views.news = new NewsListView
       collection: app.collections.news
-    app.layouts.main.middleRegion.show app.views.news
+    app.layouts.main.rightTopRegion.show app.views.news
 
   twitterLoaded: ->
     {TwitterView} = require 'views/twitter'

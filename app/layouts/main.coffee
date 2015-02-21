@@ -4,7 +4,6 @@ class MainLayout extends Marionette.LayoutView
   regions:
     navbarRegion: '#navbar'
     leftRegion: '#left'
-    middleRegion: '#middle'
     rightTopRegion: '#righttop'
     rightBottomRegion: '#rightbottom'
 
