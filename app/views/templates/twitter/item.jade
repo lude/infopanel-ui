@@ -1,3 +1,7 @@
 td
-  img.img-rounded.pull-left(src="")
-td @#{user} - #{text} - #{created_ago}
+  img.img-rounded.pull-left(src="#{userpic}")
+td
+  a(href="https://twitter.com/#{handle}") #{name}
+  span  - 
+  span!= text 
+  small.text-muted  #{created_ago}
