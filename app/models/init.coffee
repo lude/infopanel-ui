@@ -14,5 +14,5 @@ app.collections.news_feed = new NewsChanges app.collections.news
 app.collections.twitter = new TwitterCollection
 
 {TwitterChanges} = require 'models/twitter'
-app.collections.twitter_feed = new TwitterChanges
+app.collections.twitter_feed = new TwitterChanges app.collections.twitter
 
