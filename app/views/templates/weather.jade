@@ -9,7 +9,8 @@
           span.weather-icon(style="float:right; font-size:60px").setting(data-icon="#{currently.icon}")
           br
           b(style="font-size:200%") #{currently.temperature}°
-        small(style="font-size:120%;padding-left:3px") #{currently.humidity}% Humidity
+        small(style="font-size:120%;padding-left:3px") Feels Like #{currently.feelslike}° · Winds #{currently.windBearing} #{currently.windSpeed} · #{currently.humidity}% Humidity 
+          
     tr
       td
         h4 
