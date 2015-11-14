@@ -45,20 +45,6 @@ class exports.TwitterCollection extends Backbone.Collection
     else
       return response
 
-  processChanges: =>
-
-    console.log('processChanges called')
-    @each @processChange
-    @collection.trigger 'refresh'
-
-  processChange: (twitter) =>
-
-    existing = @collection.get twitter.id
-
-    if existing
-      existing.set twitter.attributes
-    else
-      @collection.add twitter
 
 class exports.TwitterChanges extends Backbone.Collection
 
@@ -69,11 +55,29 @@ class exports.TwitterChanges extends Backbone.Collection
   initialize: (collection) =>
 
     @collection = collection
-    @on 'reset', @processChanges
+    @on 'change reset add remove', @processChanges
 
   changes: =>
-
     @fetch
       error: (collection, response) =>
         if response.status == 401
           @trigger 'error:unauthorized'
+
+  processChanges: =>
+    @each @processChange
+    @collection.each @removeStale
+
+  processChange: (twitter) =>
+    existing = @collection.get twitter.id
+
+    if existing
+      existing.set twitter.attributes
+    else
+      @collection.add twitter
+
+  removeStale: (twitter) =>
+    current = @get twitter.id
+
+    if not current
+      console.log "removing twitter " + twitter.id
+      @collection.remove twitter

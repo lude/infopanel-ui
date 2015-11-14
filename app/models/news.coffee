@@ -57,10 +57,9 @@ class exports.NewsChanges extends Backbone.Collection
   initialize: (collection) =>
 
     @collection = collection
-    @on 'reset', @processChanges
+    @on 'change reset add remove', @processChanges
 
   changes: =>
-
     @fetch
       data:
         since: 0
@@ -72,10 +71,9 @@ class exports.NewsChanges extends Backbone.Collection
       return response
 
   processChanges: =>
-
     console.log('processChanges called')
     @each @processChange
-    @collection.trigger 'refresh'
+    @collection.each @removeStale
 
   processChange: (news) =>
 
@@ -86,4 +84,9 @@ class exports.NewsChanges extends Backbone.Collection
     else
       @collection.add news
 
+  removeStale: (outage) =>
+    current = @get news.id
 
+    if not current
+      console.log "removing news " + news.id
+      @collection.remove news
