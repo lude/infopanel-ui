@@ -1,10 +1,10 @@
 {
-  "name": "brunch-with-bootstrap-jade-marionette",
-  "version": "0.0.0",
+  "name": "infopanel ui",
+  "version": "1.0.0",
   "authors": [
     "David Olsen <david.olsen@isprime.com>"
   ],
-  "description": "brunch skeleton with bs3, backbone.marionette, jade, and sass",
+  "description": "weather, news & twitter for iPad on wall",
   "license": "MIT",
   "ignore": [
     "**/.*",
