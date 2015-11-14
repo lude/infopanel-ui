@@ -2,5 +2,8 @@ td
   a(href="#{url}") #{title}
   br
   small.text-muted 
-    span.label.label-default #{flair}
-    | · #{subreddit} · #{score} · #{author} · #{created_ago}
+    if flair
+      span.label.label-default #{flair}
+      |  · #{subreddit} · #{score} · #{author} · #{created_ago}
+    else 
+      | #{subreddit} · #{score} · #{author} · #{created_ago}
