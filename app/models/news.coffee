@@ -84,7 +84,7 @@ class exports.NewsChanges extends Backbone.Collection
     else
       @collection.add news
 
-  removeStale: (outage) =>
+  removeStale: (news) =>
     current = @get news.id
 
     if not current
