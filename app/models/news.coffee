@@ -6,6 +6,7 @@ class exports.News extends Backbone.Model
     created: 0
     created_ago: null
     subreddit: null
+    flair: null
     score: 0
     title: null
 

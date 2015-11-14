@@ -1,3 +1,6 @@
 td
   a(href="#{url}") #{title}
-  small.text-muted  · #{subreddit} · #{score} · #{author} · #{created_ago}
+  small.text-muted 
+    |   
+    span.label.label-default #{flair}
+    | · #{subreddit} · #{score} · #{author} · #{created_ago}
