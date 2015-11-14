@@ -5,12 +5,10 @@
     tr
       td
         h1 
-          b Now
-          span(style="font-weight:normal") #{currently.summary}
+          span(style="font-weight:normal;font-size:200%") #{currently.summary} - 
+          b(style="font-size:200%") #{currently.temperature}°
           span.weather-icon(style="float:right; font-size:60px").setting(data-icon="#{currently.icon}")
-          br
-          | #{currently.temperature}°
-          span(style="float:right;font-weight:normal") H: #{currently.humidity}%
+        small(style="font-size:120%;padding-left:3px") #{currently.humidity}% Humidity
     tr
       td
         h4 
