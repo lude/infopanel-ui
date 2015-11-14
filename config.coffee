@@ -27,4 +27,3 @@ exports.config =
       defaultExtension: 'jade'
       joinTo: 'javascripts/app.js'
   framework: 'backbone'
-
