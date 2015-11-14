@@ -6,7 +6,7 @@
       td
         h1 
           span(style="font-weight:normal;font-size:200%") #{currently.summary}
-          span.weather-icon(style="float:right; font-size:60px").setting(data-icon="#{currently.icon}")
+          span.weather-icon(style="float:right; font-size:60px", data-icon="#{currently.icon}")
           br
           b(style="font-size:200%") #{currently.temperature}°
         h4
@@ -15,26 +15,26 @@
     tr
       td
         h4 
-          span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{minutely.icon}")
+          span.weather-icon(style="float:right; font-size:30px", data-icon="#{minutely.icon}")
           b Next Hour 
           small - #{minutely.summary}
     tr
       td
         h4 
-          span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{hourly.icon}")
+          span.weather-icon(style="float:right; font-size:30px", data-icon="#{hourly.icon}")
           b Next 24 Hours
           small - #{hourly.summary}
     tr
       td
         h4 
-          span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{daily.icon}")
+          span.weather-icon(style="float:right; font-size:30px", data-icon="#{daily.icon}")
           b Next 5 Days
           small - #{daily.summary}
     each day in weekly
       tr
         td
           h4
-            span.weather-icon(style="float:right; font-size:30px").setting(data-icon="#{day.icon}")
+            span.weather-icon(style="float:right; font-size:30px", data-icon="#{day.icon}")
             b(style="font-size:120%") #{day.day} - #{day.high}°
             | /#{day.low}° - #{day.winddir} #{day.windspeed} mi/h
           h4
