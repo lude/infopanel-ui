@@ -15,8 +15,8 @@
   ],
   "dependencies": {
     "backbone": "~1.2.3",
-    "bootstrap": "~3.3.5",
-    "marionette": "~2.4.3",
+    "bootstrap": "~3.3.6",
+    "marionette": "~2.4.4",
     "momentjs": "~2.10.6",
     "stativus": "~0.10.0",
     "json3": "~3.3.2"
